@@ -1,0 +1,19 @@
+name: Backend CD
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'server/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy to Render
+        # You need to set RENDER_DEPLOY_HOOK_URL in GitHub Secrets
+        # This URL is found in your Render service settings under "Deploy Hook"
+        if: secrets.RENDER_DEPLOY_HOOK_URL != ''
+        run: |
+          curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
