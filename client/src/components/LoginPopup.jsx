@@ -41,25 +41,25 @@ const LoginPopup = ({ setShowLogin }) => {
   }
 
   return (
-    <div className='absolute z-10 w-full h-full bg-[#00000090] grid place-items-center'>
-      <form onSubmit={onLogin} className="place-self-center w-[max(23vw,330px)] text-[#808080] bg-white flex flex-col gap-6 p-6 rounded-lg text-[14px] animate-fadeIn">
-        <div className="flex justify-between items-center text-black font-bold text-[20px]">
+    <div className='fixed z-50 w-full h-full bg-[#00000090] grid place-items-center backdrop-blur-sm animate-fadeIn'>
+      <form onSubmit={onLogin} className="place-self-center w-[max(23vw,330px)] bg-white flex flex-col gap-6 p-8 rounded-[24px] shadow-2xl text-[14px] relative">
+        <div className="flex justify-between items-center text-dark font-bold text-[24px]">
           <h2>{currState}</h2>
-          <FaTimes onClick={() => setShowLogin(false)} className='cursor-pointer w-4' />
+          <FaTimes onClick={() => setShowLogin(false)} className='cursor-pointer text-gray-400 hover:text-dark transition-colors' />
         </div>
-        <div className="flex flex-col gap-5">
-          {currState === "Login" ? <></> : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your name' required className='outline-none border border-[#c9c9c9] p-2.5 rounded' />}
-          <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required className='outline-none border border-[#c9c9c9] p-2.5 rounded' />
-          <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required className='outline-none border border-[#c9c9c9] p-2.5 rounded' />
+        <div className="flex flex-col gap-4">
+          {currState === "Login" ? <></> : <input name='name' onChange={onChangeHandler} value={data.name} type="text" placeholder='Your name' required className='outline-none border border-gray-200 p-3 rounded-xl focus:border-secondary transition-colors bg-gray-50' />}
+          <input name='email' onChange={onChangeHandler} value={data.email} type="email" placeholder='Your email' required className='outline-none border border-gray-200 p-3 rounded-xl focus:border-secondary transition-colors bg-gray-50' />
+          <input name='password' onChange={onChangeHandler} value={data.password} type="password" placeholder='Password' required className='outline-none border border-gray-200 p-3 rounded-xl focus:border-secondary transition-colors bg-gray-50' />
         </div>
-        <button type='submit' className='border-none p-2.5 rounded text-white bg-[#tomato] text-[15px] cursor-pointer'>{currState === "Sign Up" ? "Create account" : "Login"}</button>
-        <div className="flex items-start gap-2 -mt-3">
-          <input type="checkbox" required className='mt-[5px]' />
-          <p>By continuing, i agree to the terms of use & privacy policy.</p>
+        <button type='submit' className='border-none p-3 rounded-full text-white bg-secondary font-bold text-[16px] cursor-pointer hover:bg-[#008f73] transition-colors shadow-soft'>{currState === "Sign Up" ? "Create account" : "Login"}</button>
+        <div className="flex items-start gap-2 -mt-2">
+          <input type="checkbox" required className='mt-[4px] accent-secondary' />
+          <p className='text-gray-500 text-[12px]'>By continuing, i agree to the terms of use & privacy policy.</p>
         </div>
         {currState === "Login"
-          ? <p>Create a new account? <span onClick={() => setCurrState("Sign Up")} className='text-[#tomato] font-bold cursor-pointer'>Click here</span></p>
-          : <p>Already have an account? <span onClick={() => setCurrState("Login")} className='text-[#tomato] font-bold cursor-pointer'>Login here</span></p>
+          ? <p className='text-gray-500'>Create a new account? <span onClick={() => setCurrState("Sign Up")} className='text-secondary font-bold cursor-pointer hover:underline'>Click here</span></p>
+          : <p className='text-gray-500'>Already have an account? <span onClick={() => setCurrState("Login")} className='text-secondary font-bold cursor-pointer hover:underline'>Login here</span></p>
         }
       </form>
     </div>

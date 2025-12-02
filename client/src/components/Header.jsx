@@ -1,13 +1,30 @@
 import React from 'react'
+import { FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa'
 
 const Header = () => {
   return (
-    <div className='h-[34vw] my-[30px] mx-auto bg-[url("/header_img.png")] bg-no-repeat bg-contain relative bg-gray-200 rounded-2xl'>
-        <div className="absoluteflex flex-col items-start gap-[1.5vw] max-w-[50%] bottom-[10%] left-[6vw] animate-fadeIn p-10">
-            <h2 className='font-bold text-white text-[max(4.5vw,22px)]'>Order your favourite food here</h2>
-            <p className='text-white text-[1vw] hidden md:block'>Choose from a diverse menu featuring a delectable array of dishes crafted with the finest ingredients and culinary expertise. Our mission is to satisfy your cravings and elevate your dining experience, one delicious meal at a time.</p>
-            <button className='border-none text-[#747474] font-medium py-[1vw] px-[2.3vw] bg-white text-[max(1vw,13px)] rounded-[50px] cursor-pointer hover:bg-gray-100 transition duration-300'>View Menu</button>
+    <div className='relative h-[500px] my-5 mx-auto bg-primary rounded-[30px] overflow-hidden flex flex-col items-center justify-center text-center p-10'>
+        {/* Background Pattern (Optional CSS or SVG) */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/food.png')]"></div>
+        
+        <div className="relative z-10 flex flex-col items-center gap-6 max-w-[800px] animate-fadeIn">
+            <h2 className='font-bold text-black text-[max(4vw,40px)] leading-tight'>Food delivery and more</h2>
+            <p className='text-black text-[18px] font-medium opacity-80 max-w-[600px]'>Groceries, shops, pharmacies, anything! We deliver it all to your doorstep in minutes.</p>
+            
+            <div className="bg-white w-full max-w-[500px] p-2 rounded-full shadow-soft flex items-center justify-between pl-6">
+                <div className="flex items-center gap-3 w-full">
+                    <FaMapMarkerAlt className='text-secondary text-[20px]' />
+                    <input type="text" placeholder="What's your address?" className='w-full outline-none text-[16px] text-dark placeholder:text-gray-400' />
+                </div>
+                <button className='bg-secondary text-white font-bold py-3 px-8 rounded-full hover:bg-[#008f73] transition-colors flex items-center gap-2'>
+                    Use current location
+                </button>
+            </div>
         </div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-secondary rounded-full opacity-20 blur-2xl"></div>
+        <div className="absolute -top-10 -left-10 w-40 h-40 bg-white rounded-full opacity-20 blur-2xl"></div>
     </div>
   )
 }
