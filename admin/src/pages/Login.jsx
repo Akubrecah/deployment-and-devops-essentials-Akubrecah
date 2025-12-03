@@ -10,6 +10,7 @@ const Login = ({ setUrl, setIsAuthenticated }) => {
     // Hardcoded admin credentials for demonstration
     if (email === "admin@tomato.com" && password === "admin123") {
         setIsAuthenticated(true);
+        localStorage.setItem("auth", "true");
         toast.success("Welcome Admin!");
     } else {
         toast.error("Invalid Credentials");

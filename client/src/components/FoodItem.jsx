@@ -30,7 +30,7 @@ const FoodItem = ({id, name, price, description, image}) => {
                 <p className='text-[20px] font-bold text-dark leading-tight group-hover:text-primary transition-colors'>{name}</p>
             </div>
             <p className="text-gray-500 text-[14px] leading-relaxed line-clamp-2 mb-4 h-[40px]">{description}</p>
-            <p className="text-primary text-[22px] font-bold">${price}</p>
+            <p className="text-primary text-[22px] font-bold">KES {price}</p>
         </div>
     </div>
   )

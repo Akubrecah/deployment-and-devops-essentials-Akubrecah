@@ -13,7 +13,9 @@ import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
 
   const url = "http://localhost:4000"
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return localStorage.getItem("auth") === "true";
+  });
 
   if (!isAuthenticated) {
     return (
