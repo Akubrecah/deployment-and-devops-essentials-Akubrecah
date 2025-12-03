@@ -10,6 +10,7 @@ const Add = ({url}) => {
         name: "",
         description: "",
         price: "",
+        stock: "",
         category: "Salad"
     });
 
@@ -25,6 +26,7 @@ const Add = ({url}) => {
         formData.append("name", data.name);
         formData.append("description", data.description);
         formData.append("price", Number(data.price));
+        formData.append("stock", Number(data.stock));
         formData.append("category", data.category);
         formData.append("image", image);
         
@@ -34,6 +36,7 @@ const Add = ({url}) => {
                 name: "",
                 description: "",
                 price: "",
+                stock: "",
                 category: "Salad"
             });
             setImage(false);
@@ -69,6 +72,10 @@ const Add = ({url}) => {
                 <div className='flex flex-col gap-2'>
                     <p className='text-gray-600 font-medium'>Product price</p>
                     <input onChange={onChangeHandler} value={data.price} className='p-3 border border-gray-200 rounded-xl outline-none focus:border-secondary transition-colors bg-gray-50' type="number" name='price' placeholder='$20' required />
+                </div>
+                <div className='flex flex-col gap-2'>
+                    <p className='text-gray-600 font-medium'>Stock Quantity</p>
+                    <input onChange={onChangeHandler} value={data.stock} className='p-3 border border-gray-200 rounded-xl outline-none focus:border-secondary transition-colors bg-gray-50' type="number" name='stock' placeholder='10' required />
                 </div>
             </div>
 

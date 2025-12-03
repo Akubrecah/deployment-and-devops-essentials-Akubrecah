@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FFC244', // Glovo Yellow
-        secondary: '#00A082', // Glovo Green
+        primary: '#ff4c24', // Tomato Red
+        secondary: '#262626', // Dark Charcoal
         background: '#F9F9F9',
         dark: '#1D1D1D',
         gray: {
