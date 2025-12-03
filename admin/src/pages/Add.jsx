@@ -71,7 +71,7 @@ const Add = ({url}) => {
                 </div>
                 <div className='flex flex-col gap-2'>
                     <p className='text-gray-600 font-medium'>Product price</p>
-                    <input onChange={onChangeHandler} value={data.price} className='p-3 border border-gray-200 rounded-xl outline-none focus:border-secondary transition-colors bg-gray-50' type="number" name='price' placeholder='$20' required />
+                    <input onChange={onChangeHandler} value={data.price} className='p-3 border border-gray-200 rounded-xl outline-none focus:border-secondary transition-colors bg-gray-50' type="number" name='price' placeholder='KES 200' required />
                 </div>
                 <div className='flex flex-col gap-2'>
                     <p className='text-gray-600 font-medium'>Stock Quantity</p>

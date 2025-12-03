@@ -34,7 +34,7 @@ const MyOrders = () => {
                   return item.name + " x " + item.quantity + ", "
                 }
               })}</p>
-              <p>${order.amount}.00</p>
+              <p>KES {order.amount}.00</p>
               <p>Items: {order.items.length}</p>
               <p><span className='text-secondary font-bold'>&#x25cf;</span> <b>{order.status}</b></p>
               <button onClick={fetchOrders} className='border-none py-3 rounded-full bg-[#ffe1e1] text-[#454545] text-[14px] font-medium cursor-pointer hover:bg-secondary hover:text-white transition-colors'>Track Order</button>

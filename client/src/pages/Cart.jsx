@@ -26,9 +26,9 @@ const Cart = () => {
                 <div className='grid grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] items-center text-[16px] my-4 text-dark font-medium'>
                   <img src={url + "/images/" + item.image} alt="" className='w-[60px] h-[60px] object-cover rounded-xl' />
                   <p>{item.name}</p>
-                  <p>${item.price}</p>
+                  <p>KES {item.price}</p>
                   <p className='pl-4'>{cartItems[item._id]}</p>
-                  <p>${item.price * cartItems[item._id]}</p>
+                  <p>KES {item.price * cartItems[item._id]}</p>
                   <FaTrash onClick={() => removeFromCart(item._id)} className='cursor-pointer text-red-400 hover:text-red-600 transition-colors' />
                 </div>
                 <hr className='h-[1px] bg-gray-100 border-none' />
@@ -42,19 +42,19 @@ const Cart = () => {
         <div className="flex-1 flex flex-col gap-6 bg-white p-8 rounded-[24px] shadow-card h-fit">
           <h2 className='text-[24px] font-bold text-dark'>Cart Totals</h2>
           <div className='flex flex-col gap-4'>
-            <div className="flex justify-between text-gray-600">
+            <div className="flex justify-between text-[#555]">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>KES {getTotalCartAmount()}</p>
             </div>
-            <hr className='border-gray-100' />
-            <div className="flex justify-between text-gray-600">
+            <hr className="my-[10px]" />
+            <div className="flex justify-between text-[#555]">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+              <p>KES {getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
-            <hr className='border-gray-100' />
-            <div className="flex justify-between text-dark text-[20px] font-bold">
+            <hr className="my-[10px]" />
+            <div className="flex justify-between text-[#555]">
               <b>Total</b>
-              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+              <b>KES {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
           <button onClick={() => navigate('/order')} className='border-none text-black font-bold bg-primary py-4 rounded-full cursor-pointer hover:scale-[1.02] transition-transform shadow-soft'>PROCEED TO CHECKOUT</button>

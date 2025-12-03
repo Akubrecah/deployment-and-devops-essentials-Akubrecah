@@ -49,7 +49,7 @@ const List = ({url}) => {
                 <img src={`${url}/images/` + item.image} alt="" className='w-[60px] h-[60px] object-cover rounded-xl' />
                 <p className='font-medium'>{item.name}</p>
                 <p className='text-gray-500'>{item.category}</p>
-                <p className='font-bold'>${item.price}</p>
+                <p className='font-bold'>KES {item.price}</p>
                 <p className={`${item.stock < 5 ? 'text-red-500 font-bold' : 'text-dark'}`}>{item.stock || 10}</p>
                 <div onClick={() => removeFood(item._id)} className='cursor-pointer w-[35px] h-[35px] rounded-full bg-red-50 flex items-center justify-center text-red-500 hover:bg-red-100 transition-colors'>
                   <FaTrash size={14} />

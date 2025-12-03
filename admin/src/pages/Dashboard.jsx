@@ -46,7 +46,7 @@ const Dashboard = ({url}) => {
                 <div className="p-4 bg-yellow-100 rounded-full text-primary"><FaBox size={24} /></div>
                 <div>
                     <p className="text-gray-500 text-[14px]">Total Sales</p>
-                    <h3 className="text-[24px] font-bold text-dark">$45,678</h3>
+                    <h3 className="text-[24px] font-bold text-dark">KES 45,678</h3>
                 </div>
             </div>
             <div className="bg-white p-6 rounded-[24px] shadow-card flex items-center gap-4">

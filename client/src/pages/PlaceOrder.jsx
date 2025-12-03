@@ -65,19 +65,19 @@ const PlaceOrder = () => {
         <div className="flex flex-col gap-6 bg-white p-8 rounded-[24px] shadow-card">
           <h2 className='text-[24px] font-bold text-dark'>Cart Totals</h2>
           <div className='flex flex-col gap-4'>
-            <div className="flex justify-between text-gray-600">
+            <div className="flex justify-between text-[#555]">
               <p>Subtotal</p>
-              <p>${getTotalCartAmount()}</p>
+              <p>KES {getTotalCartAmount()}</p>
             </div>
-            <hr className='border-gray-100' />
-            <div className="flex justify-between text-gray-600">
+            <hr className="my-[10px]" />
+            <div className="flex justify-between text-[#555]">
               <p>Delivery Fee</p>
-              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
+              <p>KES {getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
-            <hr className='border-gray-100' />
-            <div className="flex justify-between text-dark text-[20px] font-bold">
+            <hr className="my-[10px]" />
+            <div className="flex justify-between text-[#555]">
               <b>Total</b>
-              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
+              <b>KES {getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
           <button type='submit' className='border-none text-black font-bold bg-primary w-full py-4 rounded-full cursor-pointer mt-[20px] hover:scale-[1.02] transition-transform shadow-soft'>PROCEED TO PAYMENT</button>
